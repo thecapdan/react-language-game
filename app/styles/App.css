@@ -1,0 +1,57 @@
+h1{
+  color: red;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.25fr 15px 0.75fr;
+  grid-template-rows: auto 25px auto 25px auto 25px auto;
+ 
+}
+
+.grid {
+  background-color: #444;
+  color: #fff;
+  padding: 25px;
+  font-size: 3rem;
+}
+
+.header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.leftbar {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 6;
+  background: #c7d8a8;
+}
+
+.rightbartop {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  background: #d0c7ae;
+  height: 400px;
+}
+
+.rightbarbottom {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  background: #cea0a0;
+}
+ 
+.footer {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 7;
+  grid-row-end: 8;
+  background: #c1c0bf;
+}
