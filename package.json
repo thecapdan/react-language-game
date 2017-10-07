@@ -8,6 +8,7 @@
     "start": "webpack-dev-server --devtool eval --progress --hot --content-base app",
     "deploy": "NODE_ENV=production webpack --config webpack.production.config.js",
     "deploy-windows": "SET NODE_ENV=production & webpack --config webpack.production.config.js",
+    "test": "jest",
     "validate": "npm ls"
   },
   "dependencies": {
@@ -27,11 +28,25 @@
     "conventional-changelog-cli": "1.x",
     "copy-webpack-plugin": "latest",
     "css-loader": "~0.26.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-15": "^1.0.1",
     "husky": "^0.12.0",
+    "jest": "^21.2.1",
     "open-browser-webpack-plugin": "0.0.3",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.0.0",
     "style-loader": "~0.13.1",
     "webpack": "latest",
     "webpack-dev-server": "latest"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/mocks/styleMock.js"
+    },
+    "setupFiles": [
+      "<rootDir>/mocks/testSetup.js"
+    ]
   },
   "keywords": [
     "es6",

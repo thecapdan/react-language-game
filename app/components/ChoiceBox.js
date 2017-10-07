@@ -14,7 +14,7 @@ export default class ChoiceBox extends React.Component {
 
   setSelected() {
     this.props.onChoiceClicked();
-    console.log("WHOOP")
+    //TODO set selected true
   }
 
   render() {
