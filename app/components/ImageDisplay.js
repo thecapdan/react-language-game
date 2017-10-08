@@ -1,19 +1,19 @@
 import React from 'react';
 
-import '../styles/ChoiceBox.css';
+import styles from '../styles/ImageDisplay.css';
 
 export default class ImageDisplay extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected: false
-    };
+  renderImage(imageName) {
+    return (
+      <div>
+        <img src={"../images/" + imageName + ".PNG"} />
+      </div>
+    );
   }
-
   render() {
     return (
       <div className="imageHolder">
-        <h2>{this.props.imageName}</h2>
+        {this.renderImage(this.props.imageName)}
       </div>
     );
   }

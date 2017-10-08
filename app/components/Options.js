@@ -7,7 +7,9 @@ require("../styles/ChoiceBox.css");
 export default class Options extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      choiceList : [ "la cuchara", "el tenedor", "el cuchillo"]
+    };
   }
 
   choiceSelected() {
@@ -17,9 +19,9 @@ export default class Options extends React.Component {
   render() {
     return (
       <div className="optionHolder">
-        <ChoiceBox onChoiceClicked={this.choiceSelected} word="Choice 1" />
-        <ChoiceBox onChoiceClicked={this.choiceSelected} word="Choice 2" />
-        <ChoiceBox onChoiceClicked={this.choiceSelected} word="Choice 3" />
+        <ChoiceBox onChoiceClicked={this.choiceSelected} word={this.state.choiceList[0]} />
+        <ChoiceBox onChoiceClicked={this.choiceSelected} word={this.state.choiceList[1]} />
+        <ChoiceBox onChoiceClicked={this.choiceSelected} word={this.state.choiceList[2]} />
       </div>
     );
   }

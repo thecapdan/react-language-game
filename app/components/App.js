@@ -15,11 +15,11 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<div className="header">
-					<h1>React Language Game</h1>
+				<div className="header" style ={ { backgroundImage: "url('../images/headerbackground.png')" } }>
+					<a>Speed Language Game</a>
 				</div>
 				<div className="leftbar">
-					<ImageDisplay imageName="Image Placeholder" />
+					<ImageDisplay imageName="spoon" />
 				</div>
 
 				<div className="rightbartop">
@@ -27,7 +27,7 @@ export default class App extends React.Component {
 				</div>
 
 				<div className="rightbarbottom">
-					<Result />
+					<Result awaitingAnswer={true} isCorrect={false} />
 				</div>
 
 				<div className="footer">

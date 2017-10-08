@@ -1,3 +1,11 @@
-.ChoiceBox{
-  color: blue;
+.ChoiceBox {
+  height: 28%;
+  border-style: ridge;
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #9fcae0);
+}
+
+.ChoiceBox p {
+  color: #2b2b38;
+  text-align: center;
+  font-size: 40px;
 }
