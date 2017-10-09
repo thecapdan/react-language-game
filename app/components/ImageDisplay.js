@@ -1,19 +1,44 @@
-import React from 'react';
+import React from "react";
 
-import styles from '../styles/ImageDisplay.css';
+import styles from "../styles/ImageDisplay.css";
 
 export default class ImageDisplay extends React.Component {
-  renderImage(imageName) {
-    return (
-      <div>
-        <img src={"../images/" + imageName + ".PNG"} />
-      </div>
-    );
+  constructor(props) {
+    super(props);
+    this.state = {
+      unveilImage: false,
+      countdownValue: ""
+    };
   }
+
+  renderImage(imageName) {
+    return <img src={"../images/" + imageName + ".PNG"} />;
+  }
+
+  reveal() {
+    this.setState({
+      unveilImage: true,
+      countdownValue: "5"
+    });
+  }
+
   render() {
     return (
       <div className="imageHolder">
-        {this.renderImage(this.props.imageName)}
+        <div className="image">{this.renderImage("spoon")}</div>
+        <div
+          className={"curtain " + (this.state.unveilImage ? "open" : "")}
+          onClick={() => this.reveal()}
+        >
+          <span className="countdownNumber">{this.state.countdownValue}</span>
+          <span
+            className={
+              "curtainMessage " + (this.state.unveilImage ? "hideMessage" : "")
+            }
+          >
+            REVEAL
+          </span>
+        </div>
       </div>
     );
   }

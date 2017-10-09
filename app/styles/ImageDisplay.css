@@ -1,7 +1,43 @@
-.imageHolder img {
+.imageHolder .image {
+  width: 48%;
+  height: 200px;
+  float: left;
+  position: absolute;
+}
+
+.imageHolder .image img {
   width: 100%;
   max-height: 500px;
-  border-style: ridge;
-  border-width: 4px;
-  border-radius: 4px;
+}
+
+.curtain {
+  width: 48%;
+  height: 500px;
+  background: #9fcae0;
+  float: left;
+  position: absolute;
+  transition: width 10s, -webkit-transform 1s;
+}
+.open {
+  width: 0;
+}
+
+.curtainMessage {
+  display: block;
+  width: 200px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 25%;
+  font-family: fantasy;
+  font-size: 72px;
+}
+
+.hideMessage {
+  display: none;
+}
+
+.countdownNumber {
+  padding-left: 5px;
+  font-family: fantasy;
+  font-size: 36px;
 }
