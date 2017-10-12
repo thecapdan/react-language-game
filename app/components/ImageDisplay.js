@@ -16,9 +16,21 @@ export default class ImageDisplay extends React.Component {
   }
 
   reveal() {
+    let that = this;
+    let counter = 10;
+    let countdown = setInterval(function(){
+      that.updateCountdownCurtain(counter);
+      counter--
+      if (counter === 0) {
+        clearInterval(countdown);
+      }
+    }, 1000);
+  }
+
+  updateCountdownCurtain(number) {
     this.setState({
       unveilImage: true,
-      countdownValue: "5"
+      countdownValue: number
     });
   }
 
