@@ -1,7 +1,5 @@
 import React from 'react';
 
-// require('../styles/ChoiceBox.css');
-
 export default class Footer extends React.Component {
   constructor(props) {
     super(props);
