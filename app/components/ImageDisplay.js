@@ -34,10 +34,17 @@ export default class ImageDisplay extends React.Component {
     });
   }
 
+  hideCurtain() {
+    this.setState({
+      unveilImage: false,
+      countdownValue: ''    
+    })
+  }
+
   render() {
     return (
       <div className="imageHolder">
-        <div className="image">{this.renderImage("spoon")}</div>
+        <div className="image">{this.renderImage(this.props.imageName)}</div>
         <div
           className={"curtain " + (this.state.unveilImage ? "open" : "")}
           onClick={() => this.reveal()}
