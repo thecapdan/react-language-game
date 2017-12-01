@@ -11,6 +11,12 @@ export default class ImageDisplay extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.imageName !== this.props.imageName) {
+      this.hideCurtain();
+    }
+  }
+
   renderImage(imageName) {
     return <img src={"../images/" + imageName + ".PNG"} />;
   }
