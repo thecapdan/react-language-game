@@ -15,28 +15,29 @@ export default class App extends React.Component {
 
     this.state = {
       language: "spanish", //initial values hardcoded
-      subject: "kitchen", 
+      subject: "kitchen",
       index: 0,
       currentImage: "spoon",
-	  options: ["la cuchara", "el cuchillo", "el armario"],
-	  correctAnswer: "la cuchara",
-	  result: "tbd"
+      options: ["la cuchara", "el cuchillo", "el armario"],
+      correctAnswer: "la cuchara",
+      result: "tbd"
     };
   }
 
   selectionMade(index) {
-	this.checkAnswer(this.state.options[index]);
+    this.checkAnswer(this.state.options[index]);
   }
 
   checkAnswer(answer) {
-	const newResult = answer === this.state.correctAnswer ? "correct" : "incorrect";
-	this.setState({
-		result: newResult
-	})
+    const newResult =
+      answer === this.state.correctAnswer ? "correct" : "incorrect";
+    this.setState({
+      result: newResult
+    });
   }
 
   getNext() {
-	const translationSet = translations[this.state.subject];
+    const translationSet = translations[this.state.subject];
     const maxValue = translationSet.length;
     const newOptions = [];
 
@@ -44,12 +45,12 @@ export default class App extends React.Component {
     randArr.forEach(i => {
       newOptions.push(translationSet[i][this.state.language]);
     });
-	const currentImageIndex = randArr[0];
+    const currentImageIndex = randArr[0];
     this.setState({
-		options: newOptions,
-		currentImage: translationSet[currentImageIndex].imageName,
-		correctAnswer: translationSet[currentImageIndex].spanish,
-		result: "tbd"
+      options: newOptions,
+      currentImage: translationSet[currentImageIndex].imageName,
+      correctAnswer: translationSet[currentImageIndex].spanish,
+      result: "tbd"
     });
   }
 
@@ -63,15 +64,24 @@ export default class App extends React.Component {
           <a>Speed Language Game</a>
         </div>
         <div className="leftbar">
-          <ImageDisplay imageName={this.state.currentImage} hideImage={this.state.result == "tbd"}/>
+          <ImageDisplay
+            imageName={this.state.currentImage}
+            hideImage={this.state.result === "tbd"}
+          />
         </div>
 
         <div className="rightbartop">
-          <Options list={this.state.options} onOptionSelected={(index) => this.selectionMade(index)} />
+          <Options
+            list={this.state.options}
+            onOptionSelected={index => this.selectionMade(index)}
+          />
         </div>
 
         <div className="rightbarbottom">
-          <Result result={this.state.result} onNextClicked={this.getNext.bind(this)}/>
+          <Result
+            result={this.state.result}
+            onNextClicked={this.getNext.bind(this)}
+          />
         </div>
 
         <div className="footer">

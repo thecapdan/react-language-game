@@ -16,15 +16,17 @@ export default class ImageDisplay extends React.Component {
   }
 
   reveal() {
-    let that = this;
     let counter = 10;
-    let countdown = setInterval(function(){
-      that.updateCountdownCurtain(counter);
-      counter--
-      if (counter === 0) {
-        clearInterval(countdown);
-      }
-    }, 1000);
+    let countdown = setInterval(
+      function() {
+        this.updateCountdownCurtain(counter);
+        counter--;
+        if (counter === 0) {
+          clearInterval(countdown);
+        }
+      }.bind(this),
+      1000
+    );
   }
 
   updateCountdownCurtain(number) {
@@ -37,8 +39,8 @@ export default class ImageDisplay extends React.Component {
   hideCurtain() {
     this.setState({
       unveilImage: false,
-      countdownValue: ''    
-    })
+      countdownValue: ""
+    });
   }
 
   render() {
