@@ -16,10 +16,10 @@
   background: #9fcae0;
   float: left;
   position: absolute;
-  transition: width 10s, -webkit-transform 1s;
 }
 .open {
   width: 0;
+  transition: width 10s, -webkit-transform 1s;
 }
 
 .curtainMessage {
